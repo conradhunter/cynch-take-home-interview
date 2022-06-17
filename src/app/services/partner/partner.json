@@ -1,0 +1,28 @@
+{
+    "partner": {
+        "id": "43kjrnlgf25feqw3r",
+        "name": "Demonstration Partner",
+        "partnerTeam": [
+            {
+                "id": "1234",
+                "firstName": "Adam",
+                "email":"adam@cynch.com.au",
+                "role":"Admin"
+            },
+            {
+                "id": "0987",
+                "firstName": "Joe",
+                "email": "joe@shellbright.com",
+                "role":"Reporting"
+            },
+            {
+                "id": "abcd",
+                "firstName": "Test",
+                "email": "test@example.com",
+                "role":"Tester"
+            }
+        ],
+        "membership": "Demo",
+        "licenses": 70
+    }
+}

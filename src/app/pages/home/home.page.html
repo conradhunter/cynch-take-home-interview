@@ -1,0 +1,104 @@
+<ion-header class="global-header-hide" [translucent]="true">
+  <ion-toolbar class="global-menu-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button id="sidebar-menu-main"></ion-menu-button>
+      <img class="global-home-cynch-logo-icon" src="../../assets/imgs/cynch_logo_icon.png" alt="Cynch Security"/>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed="true" class="ion-text-wrap">
+    <ion-card class="ion-padding">
+      
+    <ion-row class="business-data-header ion-padding-horizontal ion-padding-bottom">
+      <ion-col size="3">
+        <h4>Business</h4>
+      </ion-col>
+      <ion-col size="2" class="ion-text-center">
+        <ion-text>
+          <h4>Cyber Fitness</h4>
+        </ion-text>
+      </ion-col>
+      <ion-col size="2" class="ion-text-center">
+        <h4>Access</h4>
+      </ion-col>
+      <ion-col size="2" class="ion-text-center">
+        <h4>Last Updated</h4>
+      </ion-col>
+    </ion-row>
+    <ng-container *ngIf="!businesses">
+      <ion-row *ngFor="let i of [].constructor(5)">
+        <ion-col size="3" class="ion-text-center">
+          <h4>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </h4>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center">
+          <ion-text color="secondary">
+            <h4>
+              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h4>
+          </ion-text>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center">
+          <h4>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h4>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center">
+          <h4>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h4>
+        </ion-col>
+        <ion-col size="3" class="ion-text-center">
+          <h4>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h4>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+    <ion-row *ngIf="businesses&&businesses.length===0">
+      <ion-col size="12" class="ion-text-center ion-padding">
+        <p>No Businesses found.</p>
+        <ion-button *ngIf="partnerId" (click)="addBusiness()" fill="clear" size="small" class="ion-text-center">
+          Add a Business <ion-icon class="add-business-plus" name="add-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let business of businesses" class="business-data-list ion-padding ion-text-start">
+      <ion-col size="3" class="ion-text-capitalize">
+        <img class="business-data-list-icon global-img-radius-icons" [src]="business.image?business.image:'../../../assets/imgs/image_placeholder_32x32.jpg'">
+        <strong>{{business?.name}}</strong>
+      </ion-col>
+      <ion-col size="2" class="ion-text-center">
+        <ion-text>
+          <strong>{{business?.fitnessPercentage?business.fitnessPercentage+'%':'-'}}</strong>
+        </ion-text>
+      </ion-col>
+      <ion-col size="2" class="ion-text-center">
+        <ion-text *ngIf="business?.access !== 'pending'" class="ion-text-capitalize">
+          <ion-badge color="light">{{business?.access?business.access:' - '}}</ion-badge>
+        </ion-text>
+        <ion-text *ngIf="business?.access === 'pending'">
+          {{business?.access?business.access:' - '}}
+        </ion-text>
+      </ion-col>
+      <ion-col *ngIf="business?.daysAgo <= 1 && business?.fitnessPercentage" size="2" class="ion-text-center">
+        < 1 day
+      </ion-col>
+      <ion-col *ngIf="business?.daysAgo > 1 && business?.fitnessPercentage" size="2" class="ion-text-center">
+        {{business?.daysAgo}} days ago
+      </ion-col>
+      <ion-col *ngIf="!business?.fitnessPercentage" size="2" class="ion-text-center">
+        -
+      </ion-col>
+      <ion-col size="3" class="ion-text-end">
+        <ion-button *ngIf="business?.fitnessPercentage" (click)="businessDetails(business?.$key)" size="small" color="secondary">
+          Details
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  </ion-grid>
+</ion-content>

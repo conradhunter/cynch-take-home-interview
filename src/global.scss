@@ -1,0 +1,129 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+// ion-card-subtitle {
+//     font-weight: 600;
+// }
+
+p {
+    line-height: 1.4em;
+}
+
+ion-content {
+    --background: linear-gradient(180deg,#FFF 0,#F2F2F2 100%);
+}
+
+.new-business-modal {
+    --height: 650px!important;
+    .modal-wrapper{
+        border-radius: 10px;
+    }
+}
+
+.new-member-modal {
+    --height: 550px!important;
+    .modal-wrapper{
+        border-radius: 10px;
+    }
+}
+
+.update-business-modal {
+    --height: 500px!important;
+    .modal-wrapper{
+        border-radius: 10px;
+    }
+}
+
+.update-member-modal {
+    --height: 430px!important;
+    .modal-wrapper{
+        border-radius: 10px;
+    }
+}
+
+.business-invite-code .business-invite-code-text {
+    height: 73px;
+}
+
+.business-invite-code-copied {
+    --width: 190px;
+    text-align: center;
+}
+
+.app-start-loader {
+    --width: 100%;
+    --height: 100%;
+    --box-shadow: 0!important;
+}
+
+.global-img-radius-icons {
+    border-radius: 5px;
+}
+
+.global-loading-ctrl {
+    .global-loading-ctrl-icon {
+        font-size: 1.5rem;
+        vertical-align:middle;
+        color: var(--ion-color-primary);
+        margin-right: 8px;
+    }
+    .global-loading-ctrl-icon-error {
+        font-size: 1.9rem;
+        vertical-align:middle;
+        color: var(--ion-color-dark);
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .global-header-hide { 
+        display: none; 
+    }
+    .global-header-unhide { 
+        display: block;
+        img.global-home-cynch-logo-icon { 
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .global-header-hide { 
+        display: block; 
+    }
+    img.global-home-cynch-logo-icon { 
+        display: inline-block; 
+        height: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    img.global-home-cynch-logo-icon { 
+        display: inline-block; 
+        height: 30px;
+    }
+}

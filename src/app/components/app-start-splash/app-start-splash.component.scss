@@ -1,0 +1,46 @@
+.cynch-logo-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .cynch-logo-loader-img {
+        img {
+            margin-top: -50px;
+            max-width: 200px;
+        }
+    }
+      
+}
+
+.cynch-logo-loader-img {
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: cynchsplash;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-name: cynchsplash;
+}
+
+@-webkit-keyframes cynchsplash {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes cynchsplash {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

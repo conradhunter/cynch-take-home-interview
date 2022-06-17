@@ -1,0 +1,50 @@
+<ion-header class="global-header-unhide" [translucent]="true">
+  <ion-toolbar class="global-menu-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="not-found-page">
+  <div class="contact-form">
+    <h1 id="contact-us">Get in touch with us!</h1>
+    <form action="">
+      <div class="labelInput-container">
+        <label for="">Name</label>
+        <input type="text" />
+      </div>
+      <div class="labelInput-container">
+        <label for="">Email</label>
+        <input type="email" />
+      </div>
+      <div class="labelInput-container">
+        <label for="">Phone Number</label>
+        <input type="tel" />
+      </div>
+      <div class="labelInput-container">
+        <label for="">How did you hear about us?</label>
+        <select name="" id="">
+          <option value="">Facebook</option>
+          <option value="">Twitter</option>
+          <option value="">Google</option>
+          <option value="">LinkedIn</option>
+          <option value="">Instagram</option>
+          <option value="">Word of mouth</option>
+        </select>
+      </div>
+      <div class="labelInput-container">
+        <label for="">Message</label>
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Leave a message with any questions or enquiries!"
+        ></textarea>
+      </div>
+      <ion-button expand="block" (click)='showAlert()' id="contact-btn">Send it our way!</ion-button>
+    </form>
+  </div>
+</ion-content>

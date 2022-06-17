@@ -1,0 +1,7 @@
+{
+  "name": "cynch-partner-portal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

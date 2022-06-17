@@ -1,0 +1,60 @@
+.dough-graph-heading {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.partner-details-card h1,.partner-details-card h3{
+    font-weight: 600;
+}
+
+ion-card {
+    display: flex;
+    flex-direction: column;
+    height: 95% !important;
+    margin-bottom: 5px !important;
+}
+
+.vertical-align-set {
+    vertical-align: middle;
+}
+
+.teams-icon {
+    font-size: 23px;
+    vertical-align: bottom;
+}
+
+@media (max-width: 1024px) {
+    ion-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .partner-details-card h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    ion-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .partner-details-card {
+        margin: 0;
+        margin-top: 10px; 
+    }
+    .partner-details-card h1 {
+        font-size: 18px;
+    }
+    #display-partners {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        width: fit-content;
+    }
+    #team-details-card {
+        display: flex;
+        max-width: 100%;
+    }
+}

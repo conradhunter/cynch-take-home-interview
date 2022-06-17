@@ -1,0 +1,25 @@
+{
+    "businesses": [
+        {
+            "id": "32jkbqflb34t",
+            "access": "detailed",
+            "fitnessPercentage": 0.3,
+            "daysAgo": 9,
+            "name": "Business A"
+        },
+        {
+            "id": "r134rkbnrfdfv",
+            "access": "basic",
+            "fitnessPercentage": 0.2,
+            "daysAgo": 1,
+            "name": "Business 9"
+        },
+        {
+            "id": "45324kjnfrd",
+            "access": "detailed",
+            "fitnessPercentage": 0.1,
+            "daysAgo": 1,
+            "name": "Business 🤔"
+        }
+    ]
+}

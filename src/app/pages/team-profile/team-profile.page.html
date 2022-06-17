@@ -1,0 +1,92 @@
+<ion-header class="global-header-hide" [translucent]="true">
+	<ion-toolbar class="global-menu-toolbar">
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+			<img tappable (click)="setRoot('home')" class="global-home-cynch-logo-icon" src="../../assets/imgs/cynch_logo_icon.png" alt="Cynch Security"/>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed="false" class="ion-text-wrap">
+    <ion-row>
+      <ion-col id="display-partners" size="12">
+        <ion-card class="partner-details-card ion-padding">
+          
+          <ion-item lines="none">
+            <ion-label class="ion-text-wrap">
+              <ion-text>
+                <h1>{{partnerDetails?.name}}</h1>
+                <h1 *ngIf="!partnerDetails && !partnerDetails?.name">
+                  <ion-skeleton-text animated style="width: 50%; height: 27px;"></ion-skeleton-text>
+                </h1>
+              </ion-text>
+            </ion-label>
+            <ion-thumbnail slot="end">
+              <img class="global-img-radius-icons" [src]="partnerDetails?.image?partnerDetails?.image:'../../assets/imgs/image_placeholder_32x32.jpg'">
+            </ion-thumbnail>
+          </ion-item>
+          
+          <ion-item lines="none">
+            <ion-label class="ion-text-wrap">
+              <ion-text class="ion-padding">
+                <h3>Membership</h3>
+              </ion-text>
+              <p *ngIf="partnerDetails?.membership"><ion-badge color="primary" class="ion-text-capitalize">{{partnerDetails?.membership}}</ion-badge></p>
+              <p *ngIf="!partnerDetails && !partnerDetails?.membership">
+                <ion-skeleton-text animated style="width: 40%;"></ion-skeleton-text>
+              </p>
+              <ion-text class="ion-padding">
+                <h3>Businesses</h3>
+              </ion-text>
+              <p *ngIf="partnerDetails">{{businessesCount??'-'}} / {{partnerDetails.licenses??'-'}}</p>
+              <p *ngIf="!partnerDetails && !partnerDetails?.number">
+                <ion-skeleton-text animated style="width: 40%;"></ion-skeleton-text>
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12">
+        <ion-card class="ion-padding" id="team-details-card">
+          <ion-card-header>
+            <ion-card-title><ion-icon class="teams-icon" name="people-outline"></ion-icon> Your Team</ion-card-title>
+            <ion-card-subtitle>The people who give a crap</ion-card-subtitle>
+          </ion-card-header>
+          <ion-list *ngIf="team">
+            <ion-item *ngFor="let user of team">
+              <!-- <ion-avatar slot="start">
+                <img src="../../../assets/imgs/image_placeholder_32x32.jpg">
+              </ion-avatar> -->
+              <ion-icon slot="start" color="primary" name="id-card-outline"></ion-icon>
+              <ion-label>
+                <h4>{{user.firstName}}</h4>
+              </ion-label>
+              <p>{{user.email}}</p>
+              <ion-badge class="vertical-align-set ion-margin-start" color="light">{{user.role}}</ion-badge>
+            </ion-item>
+
+            <!-- <ion-card-header>
+              <ion-card-title>Add Team Members</ion-card-title>
+            </ion-card-header> -->
+          </ion-list>
+
+          <ion-list *ngIf=!team>
+            <ion-item *ngFor="let i of [].constructor(3)">
+              <!-- <ion-avatar slot="start">
+                <img src="../../../assets/imgs/image_placeholder_32x32.jpg">
+              </ion-avatar> -->
+              <ion-icon slot="start" name="id-card-outline"></ion-icon>
+              <ion-label>
+                <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+              </ion-label>
+              <ion-label slot="end">
+                <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

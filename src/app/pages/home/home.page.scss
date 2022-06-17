@@ -1,0 +1,98 @@
+.business-data-header {
+    font-size: 18px;
+    border-bottom: 2px solid var(--ion-color-step-700, #ECEEEF);
+}
+
+.business-data-list {
+    border-bottom: 1px solid var(--ion-color-step-700, #ECEEEF);
+
+    .business-data-list-icon {
+        vertical-align: middle;
+        margin-right: 5px;
+        width: 32px;
+        max-width: 32px;
+        max-height: 32px;
+    }
+}
+
+.business-name-reveal {
+    font-size: 14px;
+}
+
+.add-business-plus {
+    font-size: 15px;
+    margin-left: 3px;
+    vertical-align: middle;
+
+}
+
+.dough-graph {
+    margin: 0 50px;
+}
+
+.dough-graph-heading {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.circular-graph {
+    width: 178px;
+    height: 178px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: absolute;
+}
+
+.line-graph-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.refresh-icon {
+    font-size: 21px;
+}
+
+.pending-btn {
+    font-size: 15px;
+    min-width: 81px;
+}
+
+.business-data-list {
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: fontfix;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-name: fontfix;
+}
+
+.blurNames {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+@-webkit-keyframes fontfix {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fontfix {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

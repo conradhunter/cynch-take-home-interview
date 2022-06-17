@@ -1,0 +1,52 @@
+<ion-header class="global-header-hide" [translucent]="true">
+	<ion-toolbar class="global-menu-toolbar">
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+			<img tappable (click)="setRoot('home')" class="global-home-cynch-logo-icon" src="../../assets/imgs/cynch_logo_icon.png" alt="Cynch Security"/>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid fixed="true" class="ion-text-wrap">
+    <h1><ion-icon name="albums-outline"></ion-icon> Groups</h1>
+    <ion-row *ngIf="groupData">
+      <ion-col *ngFor="let group of groupData" size="12" size-md="6" size-lg="4">
+        <ion-card tappable (click)="groupSummary(group.$key)">
+
+          <ion-card-header>
+            <ion-card-subtitle><span class="tooltip">{{group.name}} <ion-icon name="help-circle-outline"></ion-icon>
+              <span class="tooltiptext">Cyber Fitness of {{group.name}} businesses.</span>
+            </span>
+              <span class="progress-indicator">
+                {{group.current_status.businesses}} businesses
+              </span>
+            </ion-card-subtitle>
+            <ion-card-title class="card-header-values" *ngIf="group?.current_status?.overall">{{(group.current_status.overall*100) | number: '1.0-0'}}%</ion-card-title>
+            <ion-card-title *ngIf="group?.current_status?.overall.length === 0">0%</ion-card-title>
+          </ion-card-header>
+          <ion-progress-bar color="secondary" [value]="(group?.current_status?.overall)?group.current_status.overall:0" [type]="group?.current_status?.overall?'determinate':'indeterminate'"></ion-progress-bar>
+        </ion-card>
+      </ion-col>
+      <ion-col *ngIf="groupData&&groupData.length===0">
+        <p> No groups available</p>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!groupData">
+      <ion-col *ngFor="let i of [].constructor(3)">
+        <ion-card>
+          <ion-item class="ion-margin-end">
+            <ion-thumbnail slot="start" class="ion-margin-end">
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+            <ion-skeleton-text animated style="width: 90%;"></ion-skeleton-text>
+          </ion-item>
+          <ion-card-content>
+            <ion-skeleton-text animated style="width: 100%;"></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 90%;"></ion-skeleton-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

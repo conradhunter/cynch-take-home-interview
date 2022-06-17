@@ -1,0 +1,28 @@
+{
+    "businessGroups": [
+        {
+            "id": "asdhgg873eg",
+            "current_status":{
+                "overall": 0.2,
+                "businesses": 2
+            },
+            "name": "Group A"
+        },
+        {
+            "id": "dasf09732fewf",
+            "current_status":{
+                "overall": 0.2,
+                "businesses": 11
+            },
+            "name": "Group 9"
+        },
+        {
+            "id": "324khjlwef",
+            "current_status":{
+                "overall": 0.1,
+                "businesses": 1100
+            },
+            "name": "Group 🤔"
+        }
+    ]
+}
